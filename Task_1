@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Введите путь к дирректории:"
+read dir
+
+if [ -e $dir ]
+        then
+                cd $dir
+                echo "Происходит удаление файлов с расширениями .bak, .tmp, .backup"
+                rm - v *.bak *.tmp *.backup
+                echo "Удаление завершено!"
+        else
+                echo "Дирректория $dir не существует"
+                exit 3
+fi
+
